@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PRO TOOLS HUB | Premium Subscriptions & AI Tools</title>
+<meta name="description" content="PRO TOOLS HUB: premium subscriptions and AI tools in one place. Pick a product and order on WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070a18;--panel:#0e1330;--panel2:#131a40;--line:#222a58;--ink:#eef0ff;--mute:#9aa3d1;--p:#7c5cff;--c:#22d3ee;--acc:#ff9d3d;--ok:#35f2a0;--no:#ff5d6c}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grid-bg{position:fixed;inset:0;z-index:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse at 50% 15%,#000 15%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 15%,#000 15%,transparent 70%)}
+.blob{position:fixed;z-index:0;border-radius:50%;filter:blur(110px);opacity:.28;animation:drift 16s ease-in-out infinite}
+.b1{width:520px;height:520px;background:var(--p);top:-180px;left:-120px}
+.b2{width:440px;height:440px;background:var(--c);top:30%;right:-160px;animation-delay:-7s;opacity:.18}
+@keyframes drift{50%{transform:translate(60px,70px) scale(1.2)}}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--p),var(--c),var(--acc));z-index:50}
+.cursor{position:fixed;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;background:radial-gradient(circle,#7c5cff1f,transparent 65%);pointer-events:none;z-index:0;transition:transform .15s}
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:14px max(20px,calc((100% - 1180px)/2));backdrop-filter:blur(14px);background:#070a18b3;border-bottom:1px solid #ffffff10;animation:down .8s both}
+@keyframes down{from{transform:translateY(-100%)}}
+.logo-t{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
+.mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--p),var(--c));display:grid;place-items:center;color:#fff;font-weight:800;animation:spin 8s linear infinite paused}
+.logo-t:hover .mark{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.links{display:flex;gap:28px;color:var(--mute);font-size:15px}
+.links a{position:relative;transition:color .2s}
+.links a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--c);transition:width .3s}
+.links a:hover{color:var(--ink)}.links a:hover::after{width:100%}
+.navr{display:flex;gap:10px;align-items:center}
+.ib{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;font-size:17px;transition:.25s}
+.ib:hover{border-color:var(--c);transform:translateY(-2px)}
+.btn{position:relative;overflow:hidden;border:0;font:inherit;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--p),#a24dff);padding:11px 24px;border-radius:12px;cursor:pointer;transition:transform .2s,box-shadow .3s;box-shadow:0 8px 28px #7c5cff55;display:inline-block}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px #7c5cff88}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--c);box-shadow:none}
+.rip{position:absolute;border-radius:50%;background:#fff6;transform:scale(0);animation:rp .6s linear;pointer-events:none}
+@keyframes rp{to{transform:scale(4);opacity:0}}
+main{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px}
+.hero{text-align:center;padding:150px 0 40px}
+.badge{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);background:#ffffff0a;padding:7px 18px;border-radius:99px;font-size:14px;color:var(--mute);animation:up .8s .1s both}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ok);display:inline-block;animation:pulse 1.6s infinite}
+.dot.off{background:var(--no);animation:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #35f2a099}80%,100%{box-shadow:0 0 0 10px #35f2a000}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}}
+h1{font-size:clamp(38px,7vw,84px);font-weight:800;line-height:1.02;letter-spacing:-2px;margin:26px 0 10px;animation:up .9s .2s both}
+.grad{background:linear-gradient(90deg,var(--p),var(--c),var(--acc),var(--p));background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% center}}
+.buy{display:block;font-size:clamp(24px,4vw,44px);letter-spacing:-1px;min-height:1.3em;margin-top:8px;color:var(--ink)}
+.buy b{color:var(--acc)}
+.caret{display:inline-block;width:3px;height:.85em;background:var(--c);margin-left:5px;vertical-align:-.08em;animation:bl .8s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.sub{max-width:660px;margin:18px auto 30px;color:var(--mute);font-size:18px;animation:up .9s .35s both}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:up .9s .5s both}
+.cta .btn{padding:15px 32px;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:56px auto 0;max-width:820px;animation:up .9s .65s both}
+.stat{background:linear-gradient(180deg,#ffffff0d,#ffffff05);border:1px solid #ffffff14;border-radius:18px;padding:18px;transition:transform .3s}
+.stat:hover{transform:translateY(-6px)}
+.stat b{display:block;font-size:36px;background:linear-gradient(90deg,#fff,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--mute);font-size:14px}
+.ticker{overflow:hidden;margin:60px -20px 0;padding:16px 0;border-block:1px solid #ffffff12;background:#ffffff06;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;gap:46px;width:max-content;animation:scroll 55s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.track span{white-space:nowrap;color:var(--mute);display:flex;gap:10px;align-items:center}
+.track b{color:var(--ink)}
+section{padding:90px 0 0}
+.sh{text-align:center;margin-bottom:36px}
+.sh small{color:var(--c);letter-spacing:3px;font-weight:700;font-size:13px}
+.sh h2{font-size:clamp(28px,4.5vw,48px);letter-spacing:-1px;margin-top:6px}
+.sh p{color:var(--mute);margin-top:8px}
+.ctl{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-bottom:28px}
+.tabs{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:5px;position:relative}
+.tab{border:0;background:none;color:var(--mute);font:inherit;font-weight:700;padding:11px 24px;cursor:pointer;position:relative;z-index:1;transition:color .3s}
+.tab.on{color:#0b0d20}
+.tab em{font-style:normal;font-size:12px;opacity:.7;margin-left:6px}
+.pill-bg{position:absolute;top:5px;bottom:5px;border-radius:10px;background:var(--acc);transition:all .45s cubic-bezier(.7,0,.2,1),background .4s}
+.chips{display:flex;gap:8px}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--mute);font:inherit;font-size:14px;padding:9px 18px;border-radius:99px;cursor:pointer;transition:.25s}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#06121a;font-weight:700}
+input{background:var(--panel);border:1px solid var(--line);color:var(--ink);font:inherit;padding:12px 20px;border-radius:12px;min-width:240px;outline:none;transition:.3s}
+input:focus{border-color:var(--c);box-shadow:0 0 0 4px #22d3ee22}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;perspective:1100px}
+.card{position:relative;overflow:hidden;background:linear-gradient(165deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:22px;cursor:pointer;transition:transform .2s ease-out,border-color .3s,opacity .7s,filter .3s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(280px circle at var(--x,50%) var(--y,0%),color-mix(in srgb,var(--acc) 22%,transparent),transparent 60%);opacity:0;transition:opacity .3s}
+.card::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--acc),transparent);transform:translateX(-100%);transition:transform .6s}
+.card:hover{border-color:var(--acc)}.card:hover::before{opacity:1}.card:hover::after{transform:none}
+.card.isoff{filter:grayscale(.85);opacity:.6}
+.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.lg{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:22px;color:#0b0d20;box-shadow:0 8px 20px #0006;transition:transform .4s}
+.card:hover .lg{transform:rotate(-8deg) scale(1.1)}
+.pl{font-size:12px;font-weight:700;display:flex;gap:6px;align-items:center;padding:5px 12px;border-radius:99px;background:#35f2a01a;color:var(--ok)}
+.pl.off{background:#ff5d6c1a;color:var(--no)}
+.card h3{font-size:21px}
+.cat{font-size:13px;color:var(--acc);margin:2px 0 10px;font-weight:600}
+.card p{color:var(--mute);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.tags i{font-style:normal;font-size:12px;background:#ffffff0d;padding:4px 11px;border-radius:8px;color:var(--mute)}
+.more{font-size:14px;font-weight:700;color:var(--ink);opacity:.6;transition:.3s}
+.card:hover .more{opacity:1;letter-spacing:.5px;color:var(--acc)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.card.rv.in.isoff{opacity:.6}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:60px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;counter-reset:s}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;position:relative;counter-increment:s;transition:.3s}
+.step:hover{transform:translateY(-8px);border-color:var(--p)}
+.step::before{content:"0" counter(s);font-size:46px;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--p)}
+.step h3{margin:6px 0}.step p{color:var(--mute);font-size:15px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:0 auto 12px;max-width:760px;transition:border .3s}
+details[open]{border-color:var(--c)}
+summary{padding:18px 22px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";font-size:22px;color:var(--c);transition:transform .3s}
+details[open] summary::after{transform:rotate(135deg)}
+details p{padding:0 22px 18px;color:var(--mute);animation:up .4s}
+footer{position:relative;z-index:1;text-align:center;color:var(--mute);padding:80px 20px 40px;font-size:14px}
+.modal{position:fixed;inset:0;z-index:60;background:#03040ecc;backdrop-filter:blur(8px);display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal.open{opacity:1;pointer-events:auto}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:28px;max-width:560px;width:100%;padding:34px;position:relative;transform:translateY(50px) scale(.9);transition:transform .45s cubic-bezier(.2,1.3,.4,1);max-height:90vh;overflow:auto}
+.modal.open .box{transform:none}
+.box h2{font-size:32px;margin:16px 0 2px}
+.box ul{list-style:none;padding:0;margin:18px 0 22px}
+.box li{padding:10px 0 10px 30px;border-bottom:1px solid var(--line);color:var(--mute);position:relative}
+.box li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+.x{position:absolute;top:16px;right:20px;background:none;border:0;color:var(--mute);font-size:30px;cursor:pointer}
+.btn.dis{background:#2a3068;box-shadow:none;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+@media(max-width:760px){.links{display:none}.hero{padding-top:120px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+:root{--p:#8b5cf6;--ok:#25d366}
+.b3{width:420px;height:420px;background:#ff4fa3;bottom:-160px;left:20%;opacity:.2;animation-delay:-3s}
+.grad{background-image:linear-gradient(90deg,#ff5d6c,#ffb454,#35f2a0,#22d3ee,#8b5cf6,#ff4fa3,#ff5d6c)}
+.chip.on{background:var(--cc);border-color:var(--cc);color:#0b0d20}
+.chip{border-color:color-mix(in srgb,var(--cc,#22d3ee) 45%,transparent)}
+.chips{flex-wrap:wrap}
+.card{border-color:color-mix(in srgb,var(--acc) 35%,var(--line));background:linear-gradient(165deg,color-mix(in srgb,var(--acc) 14%,var(--panel2)),var(--panel))}
+.card h3{font-size:19px}
+.pf{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}
+.price{font-size:23px;font-weight:800;color:var(--acc)}
+.price small{font-size:13px;color:var(--mute);font-weight:600;margin-right:4px}
+.btn.sm{padding:9px 20px;font-size:14px;background:var(--acc);color:#0b0d20;box-shadow:0 6px 18px color-mix(in srgb,var(--acc) 40%,transparent)}
+.btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 8px 26px #25d36655}
+.mrow{display:flex;gap:10px;flex-wrap:wrap}
+.fab{position:fixed;right:22px;z-index:45;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;font-size:27px;box-shadow:0 10px 30px #0008;transition:transform .25s;animation:pop .6s 1s both}
+@keyframes pop{from{transform:scale(0)}}
+.fab:hover{transform:scale(1.12) rotate(-6deg)}
+.fwa{bottom:22px;background:#25d366;color:#fff;animation-name:pop,ring;animation-duration:.6s,2.2s;animation-delay:1s,2s;animation-iteration-count:1,infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 #25d366aa}70%,100%{box-shadow:0 0 0 20px #25d36600}}
+.fbot{bottom:92px;background:linear-gradient(135deg,var(--p),#ff4fa3);color:#fff}
+.chat{position:fixed;right:22px;bottom:162px;width:min(350px,calc(100vw - 32px));height:min(480px,calc(100vh - 190px));z-index:46;background:var(--panel);border:1px solid var(--line);border-radius:22px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px #000a;transform:translateY(30px) scale(.92);opacity:0;pointer-events:none;transition:.35s cubic-bezier(.2,1.2,.4,1);transform-origin:bottom right}
+.chat.open{transform:none;opacity:1;pointer-events:auto}
+.ch{padding:14px 18px;background:linear-gradient(135deg,var(--p),#ff4fa3);display:flex;justify-content:space-between;align-items:center;font-weight:800}
+.ch small{display:block;font-weight:400;opacity:.85;font-size:12px}
+.ch button{background:none;border:0;color:#fff;font-size:24px;cursor:pointer}
+.msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14.5px;animation:up .35s both}
+.m.b{background:var(--panel2);align-self:flex-start;border-bottom-left-radius:4px}
+.m.u{background:var(--p);align-self:flex-end;border-bottom-right-radius:4px}
+.m a{display:inline-block;margin-top:8px;background:#25d366;color:#fff;padding:7px 14px;border-radius:10px;font-weight:700;font-size:13px}
+.ty{display:flex;gap:4px;padding:14px}
+.ty i{width:7px;height:7px;border-radius:50%;background:var(--mute);animation:bn 1s infinite}
+.ty i:nth-child(2){animation-delay:.15s}.ty i:nth-child(3){animation-delay:.3s}
+@keyframes bn{50%{transform:translateY(-6px)}}
+.qr{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+.qr button{border:1px solid var(--line);background:none;color:var(--ink);font:inherit;font-size:13px;padding:6px 12px;border-radius:99px;cursor:pointer;transition:.2s}
+.qr button:hover{background:var(--p);border-color:var(--p)}
+.cf{display:flex;border-top:1px solid var(--line)}
+.cf input{flex:1;min-width:0;border:0;border-radius:0;background:transparent}
+.cf button{border:0;background:var(--p);color:#fff;padding:0 20px;font-size:18px;cursor:pointer}
+footer a{color:var(--ink);margin:0 10px}
+[hidden]{display:none!important}
+.lg2{position:relative;width:50px;height:50px;border-radius:15px;flex:none;box-shadow:0 8px 20px #0006;transition:transform .4s}
+.lg2 .ltr{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:22px;color:#0b0d20;border-radius:15px}
+.lg2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:8px;border-radius:15px}
+.lg2.big{width:130px;height:130px;border-radius:32px}.lg2.big img{padding:22px;border-radius:32px}.lg2.big .ltr{font-size:56px;border-radius:32px}
+.card:hover .lg2{transform:rotate(-8deg) scale(1.1)}
+.dv{padding:110px 0 0}
+.bc{color:var(--mute);font-size:14px;margin-bottom:22px}.bc a:hover{color:var(--c)}
+.dtop{display:flex;gap:30px;align-items:center;flex-wrap:wrap;background:linear-gradient(165deg,color-mix(in srgb,var(--acc) 16%,var(--panel2)),var(--panel));border:1px solid color-mix(in srgb,var(--acc) 40%,var(--line));border-radius:28px;padding:32px;animation:up .6s both}
+.dtop .info{flex:1;min-width:260px}
+.dtop h1{font-size:clamp(28px,4.5vw,46px);margin:10px 0 4px;letter-spacing:-1px;animation:none}
+.dtop p{color:var(--mute);margin-bottom:18px;max-width:640px}
+.price.big{font-size:38px;margin:14px 0}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:26px 0}
+.trust div{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;transition:.3s}
+.trust div:hover{transform:translateY(-5px);border-color:var(--acc)}
+.trust i{font-style:normal;font-size:26px}.trust b{display:block;margin:6px 0 2px}.trust span{color:var(--mute);font-size:14px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pnl{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
+.pnl h3{margin-bottom:10px}.pnl p{color:var(--mute)}
+.pnl ul{list-style:none;padding:0}.pnl li{padding:9px 0 9px 28px;border-bottom:1px solid var(--line);color:var(--mute);position:relative}
+.pnl li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+.bulk{margin:26px 0;border-radius:20px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(120deg,#8b5cf633,#ff4fa333);border:1px solid var(--line)}
+.dv h2.t{margin:44px 0 16px;font-size:26px}
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;color:var(--mute)}
+.combos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.combo{position:relative;background:linear-gradient(160deg,#8b5cf622,var(--panel));border:1px solid var(--line);border-radius:24px;padding:24px;--acc:#ffb454}
+.combo .sv{position:absolute;top:16px;right:16px;background:#35f2a0;color:#06210f;font-size:12px;font-weight:800;padding:4px 12px;border-radius:99px}
+.cl{display:flex;align-items:center;gap:12px;margin-bottom:14px}.cl b{font-size:24px;color:var(--mute)}
+.combo p{color:var(--mute);font-size:14px}
+.band{text-align:center;border-radius:28px;padding:50px 24px;background:linear-gradient(120deg,#8b5cf6,#ff4fa3,#ffb454);color:#0b0d20}
+.band h2{font-size:clamp(26px,4vw,40px);letter-spacing:-1px}.band p{margin:10px auto 22px;max-width:560px;font-weight:600}
+.lg2 svg{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:inherit}
+nav{padding-top:calc(14px + env(safe-area-inset-top,0px))}
+.fwa{bottom:calc(22px + env(safe-area-inset-bottom,0px))}.fbot{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas><div class="grid-bg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="cursor" id="cur"></div><div id="prog"></div>
+
+<nav>
+  <a href="#top" class="logo-t"><span class="mark">P</span>PRO TOOLS HUB</a>
+  <div class="links"><a href="#tools">Products</a><a href="#how">How to order</a><a href="#faq">FAQ</a></div>
+  <div class="navr"><button class="ib" id="mus" aria-label="Background music" title="Music" style="opacity:.5">🎵</button><button class="ib" id="snd" aria-label="Toggle sound">🔊</button><a class="btn wa" id="navwa" target="_blank" rel="noopener">WhatsApp</a></div>
+</nav>
+
+<main id="top">
+<div id="home"><div class="hero">
+  <div class="badge"><span class="dot"></span><span>Order in one tap on WhatsApp</span></div>
+  <h1><span class="grad">PRO TOOLS HUB</span><span class="buy"><span id="typed"></span><span class="caret"></span></span></h1>
+  <p class="sub">Premium subscriptions and AI tools in one place. Pick a product, tap Order, and we continue on WhatsApp.</p>
+  <div class="cta"><a class="btn" href="#tools">Browse products</a><a class="btn wa" id="heroWa" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+  <div class="stats">
+    <div class="stat"><b id="nP">0</b><span>Products</span></div>
+    <div class="stat"><b id="nA">0</b><span>AI tools</span></div>
+    <div class="stat"><b id="nC">0</b><span>Categories</span></div>
+  </div>
+</div>
+<div class="ticker"><div class="track" id="track"></div></div>
+
+<section id="best" style="padding-top:60px"><div class="sh"><small>POPULAR</small><h2>⭐ Bestsellers</h2><p>Our top picks.</p></div><div class="grid" id="bestgrid"></div></section>
+<section id="tools">
+  <div class="sh"><small>OUR PRODUCTS</small><h2>Premium Subscriptions</h2><p>Click a card for details, or press Order to message us.</p></div>
+  <div class="ctl"><div class="chips" id="chips"></div><input id="q" type="search" placeholder="Search products (e.g. Canva, Netflix, VPN)" aria-label="Search"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="combos"><div class="sh"><small>BUNDLE &amp; SAVE</small><h2>🎁 Combo Deals</h2><p>Bundle up and save more.</p></div><div class="combos" id="combolist"></div></section>
+<section id="reseller"><div class="band rv"><h2>Grow with a reliable supply partner.</h2><p>Ordering in bulk or want to resell? Ask for reseller prices on WhatsApp.</p><a class="btn wa" id="resWa" target="_blank" rel="noopener">Become a Reseller</a></div></section>
+<section id="how">
+  <div class="sh"><small>HOW TO ORDER</small><h2>Three easy steps</h2></div>
+  <div class="steps rv">
+    <div class="step"><h3>Pick a product</h3><p>Search or filter, then open a card to read the details.</p></div>
+    <div class="step"><h3>Tap Order</h3><p>WhatsApp opens with the product name and price already typed.</p></div>
+    <div class="step"><h3>Confirm with us</h3><p>We confirm details and payment with you on WhatsApp.</p></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="sh"><small>FAQ</small><h2>Common questions</h2></div>
+  <details><summary>How do I order?</summary><p>Press Order on any product. WhatsApp opens with a ready message, and we reply there.</p></details>
+  <details><summary>Are prices fixed?</summary><p>Prices can change anytime, so we confirm the final price on WhatsApp before you pay.</p></details>
+  <details><summary>I need help after buying.</summary><p>Message us on WhatsApp with the product name and we will help you.</p></details>
+  <details><summary>My product is not listed.</summary><p>Ask us on WhatsApp. We may be able to arrange it.</p></details>
+</section>
+</div><div id="detail" hidden></div></main>
+<footer><div><a id="fwa" target="_blank" rel="noopener">WhatsApp +92 345 1744380</a><a href="#tools">Products</a><a href="#faq">FAQ</a></div><p style="margin-top:14px">© 2026 PRO TOOLS HUB. Prices may change anytime. All brand names belong to their owners.</p></footer>
+
+
+<button class="fab fbot" id="botb" aria-label="Open chat assistant">🤖</button>
+<a class="fab fwa" id="fwab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<div class="chat" id="chat"><div class="ch"><div>PRO TOOLS HUB Assistant<small>Ask about products and prices</small></div><button id="cx" aria-label="Close chat">×</button></div>
+<div class="msgs" id="msgs"></div><div class="qr" id="qr"></div>
+<form class="cf" id="cf"><input id="ci" placeholder="Type your question..." autocomplete="off"><button aria-label="Send">➤</button></form></div>
+
+<script>
+const WA='923451744380';
+/* ===== EDIT THESE with your real policies. Nothing here is a claim unless you make it true. ===== */
+const TRUST=[['⚡','Delivery','Delivery time is confirmed on WhatsApp when you order'],['🛡️','Support','Help on WhatsApp if something does not work'],['💬','Easy ordering','Your WhatsApp message is pre-filled'],['🔒','Price confirmed','Final price is confirmed before you pay']];
+const PAY=[]; /* e.g. ['Bank Transfer','JazzCash','Easypaisa','Binance'] */
+const REVIEWS=[]; /* only real ones, e.g. [['Ali, Lahore','Great service!',5]] */
+const COMBOS=[['Creator Combo',['Canva Invite (3 Years)','CapCut Pro (1M)'],99],['Streamer Combo',['Netflix screen (1M)','Prime screen (1M)'],99],['AI Power Combo',['ChatGPT Plus Private (1M)','Claude Pro Plan (1M)'],200]];
+const wa=t=>`https://wa.me/${WA}${t?'?text='+encodeURIComponent(t):''}`;
+const CATS={A:['AI Tools','#c06bff'],S:['Streaming','#ff5d6c'],V:['VPN & Security','#35f2a0'],K:['Social','#22d3ee'],D:['Dev & Hosting','#ffb454'],W:['Work & Design','#5b8cff'],L:['Learning','#ff7ad9']};
+const BADGE={B:['Bestseller','#ffd23f'],P:['Popular','#ff4fa3'],N:['New','#22d3ee'],V:['Best Value','#35f2a0']};
+const P=`W|Canva Invite (3 Years)|399|B|Three-year Canva invite with premium design tools, templates and Brand Kit access.
+W|CapCut Pro (7D)|299||Seven-day CapCut Pro access for premium effects, templates and editing tools.
+A|Google AI Pro (18M)|1099|P|Eighteen-month Google AI Pro plan with advanced Gemini features and storage.
+W|CapCut Pro (1M)|699|P|One-month CapCut Pro access with premium effects, transitions and cloud tools.
+K|TikTok UK Account|799||UK-region TikTok account prepared for creators and digital businesses.
+V|SurfShark (one device)|450||Secure Surfshark VPN access for one device.
+K|Vidiq Boost (1M)|1099||One-month VidIQ Boost plan for YouTube research, analytics and channel growth.
+S|Prime screen (1M)|399||One-month Prime Video screen for movies, series and Amazon Originals.
+S|Netflix screen (1M)|499|P|One-month Netflix screen for movies, series and original entertainment.
+W|Zoom Pro (1M)|1599||One-month Zoom Pro plan with longer meetings and premium meeting tools.
+W|Canva Admin Panel|4099||Canva admin panel access for streamlined team and invite management.
+W|CapCut Pro (6M)|3899|V|Six-month CapCut Pro access for long-term premium video editing.
+K|UK Physical Sim|3599||Physical UK SIM for supported account and communication needs.
+A|ChatGPT Plus Private (1M)|4600||One-month private ChatGPT Plus access with premium AI features.
+V|Nord VPN (1M User)|450||One-month NordVPN user access for secure, private browsing.
+S|YouTube Premium (1 Month)|399||One month of ad-free YouTube, background play and YouTube Music.
+A|Muse Ai 1 Billion Credits|950|P|Muse AI account with one billion credits for high-volume AI creation.
+A|Leonardo Essential Plan|2000||Leonardo Essential access for AI image generation and creative workflows.
+A|Claude Pro Plan (1M)|5000||One-month Claude Pro plan for advanced writing, analysis and research.
+D|Cursor Pro Plan (1M)|4500||One-month Cursor Pro plan for AI-assisted software development.
+D|Loveable Pro Plan (1M)|2600||One-month Loveable Pro plan for building web experiences with AI.
+A|Heygen Creator Plan|5300||HeyGen Creator access for AI avatars, voice and video production.
+A|Elevenlabs Creator Plan|3099||ElevenLabs Creator access for premium AI voice generation and dubbing.
+W|Outlook Accounts|165|N|Premium Outlook email accounts with full access and security.
+A|Jio Gemini Pro|555|N|Google Gemini Pro access with advanced AI features.
+W|CapCut Pro Admin|4000|N|CapCut Pro admin panel access with full control.
+L|Duolingo Super|360|N|Duolingo Super for ad-free language learning with premium features.
+W|Notion Business|1140|N|Notion Business workspace for team collaboration and productivity.
+D|Lovable Lite|2505|N|Lovable Lite plan for AI-powered app building.
+D|Lovable Accounts|295|N|Lovable AI accounts for building apps with AI.
+D|Lovable Pro 10k|6405|N|Lovable Pro with 10k credits for advanced AI development.
+L|Notion Plus Edu|1400|N|Notion Plus education plan for students and teachers.
+L|Udemy Personal|880|N|Udemy Personal plan with unlimited course access.
+A|Eleven Reader Ultra|970|N|ElevenLabs Reader Ultra for premium text-to-speech.
+A|ChatGPT K-12|2700|N|ChatGPT for education with K-12 focused features.
+A|ChatGPT Business|4650|N|ChatGPT Business workspace for teams and companies.
+A|Muse AI (2 Billion)|1660|N!|Muse AI with 2 billion tokens for heavy AI workloads.
+A|Muse AI (3 Billion)|2180|N!|Muse AI with 3 billion tokens for enterprise usage.
+W|Figma Pro Education|2440|N|Figma Professional education plan for designers.
+D|n8n Pro|1400|N|n8n Pro for advanced workflow automation.
+D|n8n Starter|6405|N|n8n Starter plan for workflow automation beginners.
+A|Pangram Professional|4455|N|Pangram Professional AI detection and writing tools.
+W|Brain.fm|1140|N|Brain.fm premium for focus music and productivity.
+W|Airtable Team|3285|N|Airtable Team plan for collaborative databases.
+A|Supercut Pro|2700|N|Supercut Pro for AI video editing.
+W|Linear Business|6405|N|Linear Business for project and issue tracking.
+D|Railway Hobby|6405|N|Railway Hobby plan for app deployment and hosting.
+A|Descript Creator|6405|N|Descript Creator for AI video and podcast editing.
+A|ChatPRD Pro|1855|N|ChatPRD Pro for AI product requirement documents.
+W|Adobe Express|685|N|Adobe Express premium for quick design creation.
+D|Arize Pro|3285|N|Arize Pro for ML observability and monitoring.
+D|Emergent Standard|2700|N|Emergent Standard AI development platform.
+D|Bolt Pro|4325|N!|Bolt Pro for AI-powered web development.
+D|Replit Core|11215|N|Replit Core for cloud development environment.
+D|Replit Core 1 Month|2505|N|Replit Core 1-month plan for cloud coding.
+A|Super Grok|17885|N!|Super Grok AI with premium xAI features.
+D|Supabase Pro|12840|N|Supabase Pro for backend-as-a-service.
+A|Granola Business|2050|N|Granola Business AI meeting notes.
+A|Gamma Pro|3740|N|Gamma Pro for AI presentations and documents.
+A|Elyum Pro|4455|N|Elyum Pro AI platform access.
+A|QuillBot Premium|1270|N|QuillBot Premium for AI paraphrasing and writing.
+W|Framer Pro|6600|N|Framer Pro for website design and publishing.
+W|Microsoft 365 Family|2700|N|Microsoft 365 Family with Office apps for 6 users.
+W|iLovePDF Pro|1270|N|iLovePDF Pro for advanced PDF tools.
+W|Gmail Accounts|425|N|Premium Gmail accounts with full access.
+S|Spotify Premium|1140|N|Spotify Premium for ad-free music streaming.
+V|HMA VPN|1010|N|HMA VPN premium with global servers.
+W|LinkedIn Career|2050|N|LinkedIn Career premium for job seekers.
+W|LinkedIn Business|2700|N|LinkedIn Business for companies and networking.
+W|Sales Navigator Advance|3065|N|LinkedIn Sales Navigator for lead generation.
+D|Hostinger Ultimate|6080|N|Hostinger Ultimate web hosting plan.
+D|Hostinger VPS - Km1|25295|N!|Hostinger VPS Km1 cloud server.
+D|Hostinger VPS - Km2|29740|N!|Hostinger VPS Km2 cloud server.
+D|Hostinger VPS - Km4|37150|N!|Hostinger VPS Km4 cloud server.
+D|Hostinger VPS - Km8|71605|N!|Hostinger VPS Km8 cloud server.`.split('\n').map(l=>{const[c,n,p,b,d]=l.split('|');return{c,n,p:+p,b:b.replace('!',''),d,ch:b.includes('!')}});
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+let cat='all';
+/* ---------- SOUND (made with code, no files needed) ---------- */
+let ac,soundOn=true,lastH=0;
+function tone(f,d=.08,type='sine',v=.05,slide=0){
+  if(!soundOn)return;
+  try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume();
+    const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(f,t);
+    if(slide)o.frequency.exponentialRampToValueAtTime(Math.max(40,f+slide),t+d);
+    g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d);}catch(e){}
+}
+const sfx={
+  hover:()=>{const n=Date.now();if(n-lastH>90){lastH=n;tone(1000,.04,'sine',.012)}},
+  click:()=>tone(520,.1,'triangle',.06,380),
+  tab:()=>{tone(440,.1,'square',.025,220);setTimeout(()=>tone(660,.1,'square',.02),70)},
+  open:()=>{tone(260,.28,'sawtooth',.025,700)},
+  close:()=>tone(700,.14,'triangle',.04,-350),
+  buy:()=>[523,659,784,1047].forEach((f,i)=>setTimeout(()=>tone(f,.16,'triangle',.05),i*85)),
+  no:()=>tone(180,.2,'sawtooth',.04,-60)
+};
+sfx.pop=()=>tone(800,.08,'sine',.04,500);
+sfx.ding=()=>{tone(988,.12,'sine',.05);setTimeout(()=>tone(1319,.2,'sine',.04),90)};
+sfx.key=()=>tone(1400,.02,'square',.008);
+$('#snd').onclick=()=>{soundOn=!soundOn;$('#snd').textContent=soundOn?'🔊':'🔇';if(soundOn){[523,659,784].forEach((f,i)=>setTimeout(()=>tone(f,.12,'triangle',.05),i*70))}};
+addEventListener('pointerdown',()=>[392,523,659,784].forEach((f,i)=>setTimeout(()=>tone(f,.25,'triangle',.03),i*110)),{once:true});
+let mOn=false,mT,mi=0;const CH=[[262,330,392],[220,277,330],[196,247,294],[233,294,349]];
+function pad(){if(!mOn||!soundOn)return;try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume();const t=ac.currentTime;
+  CH[mi++%4].forEach(f=>{const o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=f/2;g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.025,t+1.5);g.gain.linearRampToValueAtTime(.0001,t+4.2);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+4.3)})}catch(e){}}
+$('#mus').onclick=()=>{mOn=!mOn;$('#mus').style.opacity=mOn?1:.5;clearInterval(mT);if(mOn){pad();mT=setInterval(pad,4000)}};
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.btn,.chip,.ib,summary');if(b){sfx.click()}
+  const bt=e.target.closest('.btn');
+  if(bt){const r=document.createElement('span'),d=Math.max(bt.offsetWidth,bt.offsetHeight),q=bt.getBoundingClientRect();
+    r.className='rip';r.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-q.left-d/2}px;top:${e.clientY-q.top-d/2}px`;bt.appendChild(r);setTimeout(()=>r.remove(),600)}
+});
+
+
+const names=P.map(x=>x.n);
+/* ---------- HEADLINE: Buy <tool> typed and rewritten ---------- */
+let ni=Math.floor(Math.random()*names.length);
+(async function(){
+  const w=ms=>new Promise(r=>setTimeout(r,ms)),el=$('#typed');
+  while(true){
+    const n=names[ni++%names.length];
+    for(let i=1;i<=n.length+4;i++){const s=('Buy '+n).slice(0,i);el.innerHTML=s.length>4?'Buy <b>'+s.slice(4)+'</b>':s;await w(65)}
+    await w(1400);
+    for(let i=n.length;i>=0;i--){el.innerHTML=i?'Buy <b>'+n.slice(0,i)+'</b>':'Buy';await w(30)}
+    await w(150);
+  }
+})();
+
+
+const hue=n=>[...n].reduce((a,c)=>a+c.charCodeAt(0)*7,0)%360;
+const logo=n=>`background:linear-gradient(135deg,hsl(${hue(n)} 90% 64%),hsl(${hue(n)+45} 90% 56%))`;
+let gid=0;
+const T=(t,fg='#fff',z=24)=>`<text x="24" y="${24+z*.35}" font-size="${z}" font-weight="800" fill="${fg}" text-anchor="middle" font-family="Arial,sans-serif">${t}</text>`;
+const HEART='<path d="M24 40C10 30 8 20 14 15c4-3 8-1 10 3 2-4 6-6 10-3 6 5 4 15-10 25z"/>';
+const NOTE='M28 9c1 5 4 8 9 8.5M28 9v20a7 7 0 1 1-7-7';
+/* [file key, name pattern, background, drawing]. To use an official PNG, put it in a "logos" folder named <key>.png (e.g. logos/canva.png) and it shows automatically. */
+const LOGOS=[
+['netflix',/netflix/,'#000','<rect x="14" y="8" width="6" height="32" fill="#E50914"/><rect x="28" y="8" width="6" height="32" fill="#E50914"/><path d="M14 8h6l14 32h-6z" fill="#B20710"/>'],
+['youtube',/youtube/,'#fff','<rect x="5" y="12" width="38" height="25" rx="7" fill="#FF0000"/><path d="M20 18l11 6.5-11 6.5z" fill="#fff"/>'],
+['spotify',/spotify/,'#1DB954','<g fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round"><path d="M11 18c9-3 19-2 27 3"/><path d="M13 25c7-2 15-1 22 3"/><path d="M15 32c6-1.5 11-1 17 2"/></g>'],
+['gemini',/google ai|gemini/,'#fff',u=>`<defs><linearGradient id="s${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285F4"/><stop offset=".5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path d="M24 4c1.5 11 9 18.5 20 20-11 1.5-18.5 9-20 20-1.5-11-9-18.5-20-20C15 22.5 22.5 15 24 4z" fill="url(#s${u})"/>`],
+['claude',/claude/,'#D97757','<g stroke="#fff" stroke-width="4.5" stroke-linecap="round"><path d="M24 8v32M8 24h32M13 13l22 22M35 13L13 35"/></g>'],
+['chatgpt',/chatgpt/,'#10A37F','<path d="M24 8l13 7.5v15L24 38 11 30.5v-15z" fill="none" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/><circle cx="24" cy="23" r="4.5" fill="#fff"/>'],
+['microsoft',/microsoft/,'#fff','<path d="M9 9h14v14H9z" fill="#F25022"/><path d="M25 9h14v14H25z" fill="#7FBA00"/><path d="M9 25h14v14H9z" fill="#00A4EF"/><path d="M25 25h14v14H25z" fill="#FFB900"/>'],
+['linkedin',/linkedin|sales nav/,'#0A66C2',T('in','#fff',26)],
+['tiktok',/tiktok/,'#000',`<g fill="none" stroke-width="4.5" stroke-linecap="round"><path d="${NOTE}" stroke="#25F4EE" transform="translate(-2 -1)"/><path d="${NOTE}" stroke="#FE2C55" transform="translate(2 1.5)"/><path d="${NOTE}" stroke="#fff"/></g>`],
+['canva',/canva/,['#00C4CC','#7D2AE8'],'<path d="M33 17a11 11 0 1 0 0 14" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/>'],
+['capcut',/capcut/,'#000','<circle cx="14" cy="14" r="4.5" fill="none" stroke="#fff" stroke-width="3"/><circle cx="14" cy="34" r="4.5" fill="none" stroke="#fff" stroke-width="3"/><path d="M18 17l20 14M18 31l20-14" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>'],
+['prime',/prime/,'#00A8E1','<text x="24" y="23" font-size="14" font-weight="800" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">prime</text><path d="M11 31c9 6 19 6 27 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>'],
+['zoom',/zoom/,'#0B5CFF','<rect x="8" y="15" width="22" height="18" rx="5" fill="#fff"/><path d="M32 21l8-5v16l-8-5z" fill="#fff"/>'],
+['nordvpn',/nord/,'#4687FF','<path d="M8 37L21 11l6 12 4-6 9 20z" fill="#fff"/>'],
+['surfshark',/surfshark/,['#1FB6C1','#1D6FE0'],'<path d="M9 36C14 22 24 13 39 11c-4 7-4 14-2 25-9-4-18-4-28 0z" fill="#fff"/>'],
+['notion',/notion/,'#fff','<rect x="10" y="9" width="28" height="30" rx="4" fill="#fff" stroke="#111" stroke-width="3"/>'+T('N','#111',20)],
+['figma',/figma/,'#1e1e1e','<rect x="15" y="7" width="9" height="10" rx="4.5" fill="#F24E1E"/><rect x="24" y="7" width="9" height="10" rx="4.5" fill="#FF7262"/><rect x="15" y="17" width="9" height="10" rx="4.5" fill="#A259FF"/><circle cx="28.5" cy="22" r="4.5" fill="#1ABCFE"/><rect x="15" y="27" width="9" height="10" rx="4.5" fill="#0ACF83"/>'],
+['adobe',/adobe/,'#FA0F00','<path d="M24 11l14 28h-7L24 25l-7 14h-7z" fill="#fff"/>'],
+['supabase',/supabase/,'#1c1c1c','<path d="M27 6L10 28h13l-2 14 17-23H25z" fill="#3ECF8E"/>'],
+['duolingo',/duolingo/,'#58CC02','<circle cx="17" cy="20" r="7" fill="#fff"/><circle cx="31" cy="20" r="7" fill="#fff"/><circle cx="18" cy="21" r="3" fill="#333"/><circle cx="30" cy="21" r="3" fill="#333"/><path d="M20 28h8l-4 7z" fill="#FF9600"/>'],
+['udemy',/udemy/,'#A435F0','<path d="M15 12v15a9 9 0 0 0 18 0V12" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/>'],
+['gmail',/gmail/,'#fff','<path d="M9 37V14l15 12 15-12v23" fill="none" stroke="#EA4335" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>'],
+['outlook',/outlook/,'#0078D4','<circle cx="24" cy="24" r="10" fill="none" stroke="#fff" stroke-width="5.5"/>'],
+['hostinger',/hostinger/,'#673DE6',T('H','#fff',28)],
+['framer',/framer/,'#000','<path d="M12 8h24v12H24zM12 20h12l12 12H24v12L12 32z" fill="#fff"/>'],
+['vidiq',/vidiq/,'#EF3E5C',T('vIQ','#fff',16)],
+['muse',/muse/,'#7C3AED',T('M','#fff',26)],
+['leonardo',/leonardo/,['#FF8A00','#8B2EFF'],T('L','#fff',26)],
+['cursor',/cursor/,'#111','<path d="M24 8l14 8v16l-14 8-14-8V16z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M24 24l14-8M24 24L10 16M24 24v16" stroke="#fff" stroke-width="3"/>'],
+['lovable',/lovable/,['#FF5F9E','#FF9F43'],`<g fill="#fff">${HEART}</g>`],
+['heygen',/heygen/,['#6A5CFF','#C86BFF'],T('H','#fff',26)],
+['elevenlabs',/elevenlabs|eleven reader/,'#000','<rect x="16" y="12" width="6" height="24" rx="2" fill="#fff"/><rect x="26" y="12" width="6" height="24" rx="2" fill="#fff"/>'],
+['n8n',/n8n/,'#EA4B71',T('n8n','#fff',17)],
+['pangram',/pangram/,'#1F2937',T('P','#fff',26)],
+['brainfm',/brain\.fm/,'#1b1b3a',T('b','#8ab4ff',28)],
+['airtable',/airtable/,'#fff','<path d="M24 8L7 15l17 7 17-7z" fill="#FCB400"/><path d="M26 25v15l15-6V19z" fill="#18BFFF"/><path d="M22 25.5L8 31V19z" fill="#F82B60"/>'],
+['supercut',/supercut/,['#FF4D6D','#FF9E4D'],T('S','#fff',26)],
+['linear',/linear/,'#5E6AD2','<circle cx="24" cy="24" r="12" fill="none" stroke="#fff" stroke-width="4"/><path d="M12 28l8 8M12 22l14 14" stroke="#fff" stroke-width="3"/>'],
+['railway',/railway/,'#0B0D0E','<g stroke="#fff" stroke-width="3.5" stroke-linecap="round"><path d="M10 16h28M10 25h28M10 34h28"/></g>'],
+['descript',/descript/,'#000','<circle cx="24" cy="24" r="12" fill="#fff"/>'+T('D','#000',16)],
+['chatprd',/chatprd/,'#1E293B',T('PRD','#fff',15)],
+['arize',/arize/,'#E6007A',T('A','#fff',26)],
+['emergent',/emergent/,'#0F172A',T('E','#7dd3fc',26)],
+['bolt',/bolt/,'#fff','<path d="M27 6L10 28h12l-3 14 19-24H26z" fill="#111"/>'],
+['replit',/replit/,'#F26207','<rect x="10" y="9" width="12" height="11" rx="3" fill="#fff"/><rect x="24" y="9" width="14" height="11" rx="3" fill="#fff"/><rect x="10" y="22" width="12" height="11" rx="3" fill="#fff"/><rect x="24" y="22" width="14" height="11" rx="3" fill="#fff" opacity=".6"/>'],
+['grok',/grok/,'#000','<circle cx="22" cy="26" r="11" fill="none" stroke="#fff" stroke-width="4"/><path d="M20 28L37 10" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'],
+['granola',/granola/,'#F5D88A',T('G','#3b2f12',26)],
+['gamma',/gamma/,['#FF6A88','#7B61FF'],T('γ','#fff',28)],
+['elyum',/elyum/,'#0EA5E9',T('E','#fff',26)],
+['quillbot',/quillbot/,'#4FA83D',T('Q','#fff',26)],
+['ilovepdf',/ilovepdf/,'#E5322D',`<g fill="#fff">${HEART}</g>`],
+['hma',/hma/,'#FFDD00',T('HMA','#111',15)],
+['sim',/\bsim\b/,'#334155','<path d="M15 8h14l8 8v24H15z" fill="#fff"/><rect x="20" y="23" width="12" height="12" rx="2" fill="#334155"/>']];
+function lg(x,big){
+  const f=LOGOS.find(l=>l[1].test(x.n.toLowerCase())),u=++gid;
+  let h=`<span class="ltr" style="${logo(x.n)}">${x.n[0]}</span>`;
+  if(f){const bg=f[2],g=Array.isArray(bg),d=typeof f[3]==='function'?f[3](u):f[3];
+    h=`<svg viewBox="0 0 48 48" role="img" aria-label="${x.n} logo">${g?`<defs><linearGradient id="b${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${bg[0]}"/><stop offset="1" stop-color="${bg[1]}"/></linearGradient></defs>`:''}<rect width="48" height="48" rx="11" fill="${g?`url(#b${u})`:bg}"/>${d}</svg><img src="logos/${f[0]}.png" alt="" onerror="this.remove()">`}
+  return `<div class="lg2 ${big?'big':''}">${h}</div>`}
+const tk=names.map((n,i)=>`<span><i class="dot" style="background:${Object.values(CATS)[i%7][1]}"></i><b>${n}</b></span>`).join('');
+$('#track').innerHTML=tk+tk;
+['#navwa','#heroWa','#fwa','#fwab','#resWa'].forEach(s=>$(s).href=wa('Hi, I want to know about your products'));
+$('#nP').dataset.n=P.length;$('#nA').dataset.n=P.filter(x=>x.c==='A').length;$('#nC').dataset.n=7;
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;const el=e.target;io.unobserve(el);
+  if(el.dataset.n){const end=+el.dataset.n;let c=0;const id=setInterval(()=>{el.textContent=++c;if(c>=end)clearInterval(id)},1400/end)}
+  else el.classList.add('in');
+}),{threshold:.12});
+$$('[data-n],.rv').forEach(el=>io.observe(el));
+
+/* categories + cards */
+function chips(){
+  const h=[['all','All','#22d3ee',P.length],...Object.entries(CATS).map(([k,v])=>[k,v[0],v[1],P.filter(x=>x.c===k).length])];
+  $('#chips').innerHTML=h.map(([k,l,c,n])=>`<button class="chip ${k===cat?'on':''}" data-s="${k}" style="--cc:${c}">${l} (${n})</button>`).join('');
+  $$('.chip').forEach(b=>b.onclick=()=>setCat(b.dataset.s));
+}
+function setCat(k){cat=k;chips();render()}
+function cardHTML(x,i=0){const col=CATS[x.c][1],b=BADGE[x.b]||[CATS[x.c][0],col],d=Math.min(i,12)*45;return `
+  <article class="card rv" tabindex="0" data-i="${P.indexOf(x)}" style="--acc:${col};transition-delay:${d}ms,${d}ms,0s,0s">
+    <div class="row">${lg(x)}<span class="pl" style="color:${b[1]};background:${b[1]}22">${b[0]}</span></div>
+    <h3>${x.n}</h3><div class="cat">${CATS[x.c][0]}</div><p>${x.d}</p>
+    <div class="pf"><div class="price"><small>${x.ch?'💬 ':''}PKR</small>${x.p}/-</div><button class="btn sm ord">Order</button></div>
+  </article>`}
+function render(){
+  const q=$('#q').value.trim().toLowerCase();
+  const L=P.filter(x=>(cat==='all'||x.c===cat)&&(!q||(x.n+x.d+CATS[x.c][0]).toLowerCase().includes(q)));
+  $('#grid').innerHTML=L.length?L.map(cardHTML).join(''):'<div class="empty">No product found. Ask us on WhatsApp, we may arrange it.</div>';
+  $$('#grid .rv').forEach(el=>io.observe(el));
+}
+$('#q').oninput=render;
+/* tilt + spotlight + hover sound */
+const G=$('#grid');
+G.addEventListener('mousemove',e=>{const c=e.target.closest('.card');if(!c)return;const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');
+  c.style.transform=`rotateX(${(y/r.height-.5)*-9}deg) rotateY(${(x/r.width-.5)*9}deg) translateY(-5px)`});
+G.addEventListener('mouseover',e=>{if(e.target.closest('.card'))sfx.hover()});
+G.addEventListener('mouseout',e=>{const c=e.target.closest('.card');if(c)c.style.transform=''});
+
+
+/* ---------- product page, combos, routing ---------- */
+const orderMsg=x=>`Assalam-o-Alaikum! I want to order ${x.n} (PKR ${x.p}/-)`;
+const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const INC={A:'Premium AI features of this plan',S:'Streaming access for the period you buy',V:'Private, secure browsing on supported devices',K:'Account ready for social and creator work',D:'Tools for building, coding and hosting projects',W:'Pro features for design, work and productivity',L:'Premium learning features'};
+let lastY=0;
+function home(){
+  $('#bestgrid').innerHTML=P.filter(x=>x.b==='B'||x.b==='P').slice(0,6).map(cardHTML).join('');
+  $('#combolist').innerHTML=COMBOS.map(([t,ns,save])=>{const L=ns.map(n=>P.find(p=>p.n===n)).filter(Boolean),price=L.reduce((a,p)=>a+p.p,0)-save;
+    return `<div class="combo rv"><span class="sv">Save PKR ${save}</span><div class="cl">${L.map(x=>lg(x)).join('<b>+</b>')}</div><h3>🎁 ${t}</h3><p>${ns.join(' + ')}</p>
+    <div class="pf"><div class="price"><small>PKR</small>${price}/-</div><a class="btn wa sm" target="_blank" rel="noopener" href="${wa(`Assalam-o-Alaikum! I want the ${t} (${ns.join(' + ')}) for PKR ${price}/-`)}">Order Combo</a></div></div>`}).join('');
+  $$('#bestgrid .rv,#combolist .rv').forEach(el=>io.observe(el));
+}
+function showDetail(x){
+  const col=CATS[x.c][1],b=BADGE[x.b],dur=(x.n.match(/\(([^)]+)\)/)||[])[1],
+    rel=P.filter(y=>y.c===x.c&&y!==x).slice(0,4);
+  const inc=[dur?'Plan length: '+dur:'Plan: '+x.n,x.d,INC[x.c],'Setup and support on WhatsApp'];
+  $('#home').hidden=true;const d=$('#detail');d.hidden=false;document.title=`${x.n} - PKR ${x.p}/- | PRO TOOLS HUB`;
+  d.innerHTML=`<div class="dv" style="--acc:${col}">
+  <div class="bc"><a href="#">Home</a> › <a href="#tools">Products</a> › ${x.n}</div>
+  <div class="dtop">${lg(x,1)}<div class="info">
+    ${b?`<span class="pl" style="color:${b[1]};background:${b[1]}22">${b[0]}</span>`:''}
+    <h1>${x.n}</h1><div class="cat">Premium Subscription · ${CATS[x.c][0]}</div>
+    <div class="price big"><small>${x.ch?'💬 ':''}PKR</small>${x.p}/- <small>one-time</small></div>
+    <p>${x.d}. Order ${x.n} from PRO TOOLS HUB on WhatsApp.</p>
+    <div class="mrow"><a class="btn wa" target="_blank" rel="noopener" href="${wa(orderMsg(x))}">Order on WhatsApp</a><a class="btn ghost" target="_blank" rel="noopener" href="${wa('Hi, I have a question about '+x.n)}">Ask a question</a><a class="btn ghost" href="#tools">← All products</a></div>
+  </div></div>
+  <div class="trust">${TRUST.map(t=>`<div><i>${t[0]}</i><b>${t[1]}</b><span>${t[2]}</span></div>`).join('')}</div>
+  <div class="two"><div class="pnl"><h3>What's Included</h3><ul>${inc.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+  <div class="pnl"><h3>Payment Methods</h3>${PAY.length?`<ul>${PAY.map(i=>`<li>${i}</li>`).join('')}</ul>`:'<p>Payment methods are shared on WhatsApp after you place your order.</p>'}</div></div>
+  <div class="bulk"><div><h3>📦 Ordering in Bulk?</h3><p style="color:var(--mute)">Ask for a custom quote or reseller prices on WhatsApp.</p></div><a class="btn wa" target="_blank" rel="noopener" href="${wa('Hi, I need a bulk/reseller quote for '+x.n)}">Chat on WhatsApp</a></div>
+  <h2 class="t">How to Order</h2>
+  <div class="steps"><div class="step"><h3>Message on WhatsApp</h3><p>Tap the order button. Your message is pre-filled.</p></div><div class="step"><h3>Confirm and pay</h3><p>We confirm the price and share payment details.</p></div><div class="step"><h3>Get your product</h3><p>We deliver and help you get started.</p></div></div>
+  ${REVIEWS.length?`<h2 class="t">⭐ Customer Reviews</h2><div class="two">${REVIEWS.map(r=>`<div class="rev">${'★'.repeat(r[2]||5)}<p>${r[1]}</p><b>— ${r[0]}</b></div>`).join('')}</div>`:''}
+  <h2 class="t">Related Products</h2><div class="grid">${rel.map(cardHTML).join('')}</div></div>`;
+  $$('#detail .rv').forEach(el=>io.observe(el));scrollTo(0,0);
+}
+function route(){
+  const m=location.hash.match(/^#\/p\/(.+)$/),x=m&&P.find(p=>slug(p.n)===m[1]);
+  if(x){showDetail(x);return}
+  $('#detail').hidden=true;$('#home').hidden=false;document.title='PRO TOOLS HUB | Premium Subscriptions & AI Tools';
+  const h=location.hash;
+  if(h.length>1&&!h.startsWith('#/')){const t=document.querySelector(h);t&&t.scrollIntoView()}else scrollTo(0,lastY);
+}
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.card');if(!c||c.dataset.i===undefined)return;const x=P[c.dataset.i];
+  if(e.target.closest('.ord')){sfx.buy();openWA(wa(orderMsg(x)));return}
+  if(!$('#detail').hidden===false)lastY=scrollY;sfx.open();location.hash='#/p/'+slug(x.n);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){const c=e.target.closest('.card');if(c&&c.dataset.i!==undefined){lastY=scrollY;location.hash='#/p/'+slug(P[c.dataset.i].n)}}
+  if(e.key==='Escape')$('#chat').classList.remove('open');
+});
+
+/* ---------- chat assistant ---------- */
+const chat=$('#chat'),msgs=$('#msgs');let greeted=false;
+const STOP=new Set(['price','rate','kitna','kitne','kya','hai','ka','ki','ke','the','for','pro','plan','month','1','of','and','you','have','want','need','chahiye','order','buy','me','mujhe','aap','hain']);
+function say(t,who,link){
+  const d=document.createElement('div');d.className='m '+who;d.innerHTML=t+(link?`<br><a target="_blank" rel="noopener" href="${link[1]}">${link[0]}</a>`:'');
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;if(who==='b')sfx.ding();
+}
+function reply(t,link){
+  const ty=document.createElement('div');ty.className='m b ty';ty.innerHTML='<i></i><i></i><i></i>';msgs.appendChild(ty);msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{ty.remove();say(t,'b',link)},650);
+}
+function brain(q){
+  const s=q.toLowerCase(),tok=s.split(/[^a-z0-9.+]+/).filter(w=>w.length>1&&!STOP.has(w));
+  if(/^(hi|hello|hey|salam|assalam|aoa|slam)/.test(s))return['Assalam o Alaikum! Welcome to PRO TOOLS HUB. Which product do you need? Product ka naam likhein.'];
+  let best=null,bs=0;
+  for(const x of P){const n=x.n.toLowerCase();const sc=tok.filter(w=>n.includes(w)).length;if(sc>bs){bs=sc;best=x}}
+  if(best)return[`<b>${best.n}</b> is PKR ${best.p}/-. ${best.d}. Order karne ke liye neeche button dabayein.`,['Order on WhatsApp',wa(orderMsg(best))]];
+  const ck=Object.entries(CATS).find(([k,v])=>tok.some(w=>v[0].toLowerCase().split(/[^a-z]+/).includes(w))||(k==='D'&&/host|vps|code|dev/.test(s))||(k==='V'&&/vpn/.test(s)));
+  if(ck){setCat(ck[0]);$('#tools').scrollIntoView({behavior:'smooth'});return[`Showing <b>${ck[1][0]}</b> products for you. Scroll down to see them.`]}
+  if(/order|buy|kharid|lena|kaise|how/.test(s))return['Ordering is easy: 1) Pick a product 2) Press Order 3) WhatsApp opens with your message. We confirm everything there.',['Open WhatsApp',wa('Hi, I want to order')]];
+  if(/pay|easypaisa|jazz|bank|card/.test(s))return['Payment options are shared on WhatsApp after you choose a product.',['Ask on WhatsApp',wa('Hi, how can I pay?')]];
+  if(/deliver|time|kitni der|how long/.test(s))return['Delivery time is confirmed on WhatsApp when you place your order.',['Ask on WhatsApp',wa('Hi, how long will delivery take?')]];
+  if(/help|support|problem|issue|work|warranty|madad/.test(s))return['Sorry about that. Please message us on WhatsApp with the product name and we will help you.',['Get support',wa('Hi, I need support')]];
+  if(/price|rate|kitn|cost|list/.test(s))return['Prices start from PKR 165. Type a product name like Canva, Netflix or ChatGPT and I will tell you the price.'];
+  return['I can help with prices and orders. Type a product name, or talk to us directly on WhatsApp.',['Chat on WhatsApp',wa('Hi')]];
+}
+function ask(t){if(!t.trim())return;say(t.replace(/</g,'&lt;'),'u');const r=brain(t);reply(r[0],r[1])}
+function qr(){$('#qr').innerHTML=['Prices','How to order','Payment','AI tools','Netflix','Support'].map(x=>`<button>${x}</button>`).join('');$$('#qr button').forEach(b=>b.onclick=()=>{sfx.click();ask(b.textContent==='Prices'?'price list':b.textContent)})}
+$('#botb').onclick=()=>{chat.classList.toggle('open');sfx.open();if(!greeted){greeted=true;qr();reply('Assalam o Alaikum! I am the PRO TOOLS HUB assistant. Ask me about any product or price, or talk to us on WhatsApp.',['Chat on WhatsApp',wa('Hi')])}};
+$('#ci').addEventListener('input',()=>sfx.key());
+$('#cx').onclick=()=>chat.classList.remove('open');
+$('#cf').onsubmit=e=>{e.preventDefault();const i=$('#ci');ask(i.value);i.value=''};
+
+/* ---------- scroll bar, cursor glow, particle network ---------- */
+addEventListener('scroll',()=>{$('#prog').style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%'},{passive:true});
+let mx=innerWidth/2,my=300;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;$('#cur').style.transform=`translate(${mx}px,${my}px)`});
+const cv=$('#fx'),cx=cv.getContext('2d');let PT=[];
+function size(){cv.width=innerWidth;cv.height=innerHeight;PT=Array.from({length:Math.min(70,innerWidth/18|0)},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
+size();addEventListener('resize',size);
+(function draw(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  for(const p of PT){
+    p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>cv.width)p.vx*=-1;if(p.y<0||p.y>cv.height)p.vy*=-1;
+    const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);if(d<120){p.x+=dx/d*1.5;p.y+=dy/d*1.5}
+    cx.fillStyle='#22d3ee88';cx.beginPath();cx.arc(p.x,p.y,1.6,0,6.3);cx.fill();
+  }
+  for(let i=0;i<PT.length;i++)for(let j=i+1;j<PT.length;j++){const d=Math.hypot(PT[i].x-PT[j].x,PT[i].y-PT[j].y);
+    if(d<120){cx.strokeStyle=`rgba(124,92,255,${.25*(1-d/120)})`;cx.beginPath();cx.moveTo(PT[i].x,PT[i].y);cx.lineTo(PT[j].x,PT[j].y);cx.stroke()}}
+  requestAnimationFrame(draw);
+})();
+
+
+function openWA(url){
+  let w=null;try{w=window.open(url,'_blank')}catch(e){}if(w)return;
+  const b=document.createElement('div');b.className='modal open';
+  b.innerHTML=`<div class="box"><button class="x" aria-label="Close">×</button><h2 style="font-size:24px">Open WhatsApp</h2><p style="color:var(--mute);margin:10px 0 18px">Your browser blocked the new tab. Tap the button, or copy the link.</p><div class="mrow"><a class="btn wa" href="${url}" target="_blank" rel="noopener">Open WhatsApp</a><button class="btn ghost" id="cp">Copy link</button></div></div>`;
+  document.body.appendChild(b);b.onclick=e=>{if(e.target===b||e.target.className==='x')b.remove()};
+  $('#cp').onclick=()=>{const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();try{document.execCommand('copy');$('#cp').textContent='Copied ✓'}catch(e){}t.remove()}}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href*="wa.me"]');if(a){e.preventDefault();openWA(a.href)}},true);
+chips();render();home();route();
+</script>
+</body>
+</html>
